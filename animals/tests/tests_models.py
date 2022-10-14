@@ -16,7 +16,7 @@ class AnimalModelTest(TestCase):
             "weight": 10.5,
             "sex": "Macho",
         }
-        # Rever group e traits depois
+
         cls.animal = Animal.objects.create(**cls.animal_data)
 
     def test_name_max_length(self):

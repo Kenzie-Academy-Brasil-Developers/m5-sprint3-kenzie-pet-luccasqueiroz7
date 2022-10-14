@@ -10,7 +10,7 @@ urlpatterns = [
         views.AnimalView.as_view(),
     ),
     path(
-        "animals/<int:animal_id>",
+        "animals/<int:animal_id>/",
         views.AnimalDetailView.as_view(),
     ),
 ]

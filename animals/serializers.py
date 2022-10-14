@@ -34,11 +34,14 @@ class AnimalSerializer(serializers.Serializer):
         animal = Animal.objects.create(**validated_data)
 
         group_obj, _ = Group.objects.get_or_create(**group)
+
         animal.group = group_obj
 
         for trait_dict in traits_list:
             trait_obj, _ = Trait.objects.get_or_create(**trait_dict)
             animal.traits.add(trait_obj)
+
+        animal.save()
 
         return animal
 
